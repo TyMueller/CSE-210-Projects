@@ -4,6 +4,30 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Sandbox World!");
+        static int AddNumbers(int firstNum, int secondNum, string entry) //When do we need to put "static"?
+        {
+            int addedNum = firstNum + secondNum;
+            int subNums = secondNum - firstNum;
+            Console.WriteLine(entry);
+            return addedNum;
+            //return subNums; //Can you return more than 1 thing at a time?
+        }
+
+        Console.Write("Enter a string to be printed: ");
+        string entry = Console.ReadLine();
+
+
+        Console.Write("Enter a number: ");
+        string firstNum = Console.ReadLine();
+        int firstNumInt = int.Parse(firstNum); //Using .toString() and .Parse() we can change variables
+
+
+
+        Console.Write("Enter a second number: ");
+        string secondNum = Console.ReadLine();
+        int secondNumInt = int.Parse(secondNum);
+
+        int test = AddNumbers(firstNumInt, secondNumInt, entry);
+        Console.Write(test); //Is this the right way to do this?
     }
 }
