@@ -4,30 +4,50 @@ class Program
 {
     static void Main(string[] args)
     {
-        static int AddNumbers(int firstNum, int secondNum, string entry) //When do we need to put "static"?
-        {
-            int addedNum = firstNum + secondNum;
-            int subNums = secondNum - firstNum;
-            Console.WriteLine(entry);
-            return addedNum;
-            //return subNums; //Can you return more than 1 thing at a time?
-        }
+        DisplayMessage();
+        string name = PromptUserName();
 
-        Console.Write("Enter a string to be printed: ");
-        string entry = Console.ReadLine();
+        int favNumber = PromtUserNumber();
 
+        int squaredNum = SquareNumber(favNumber);
 
-        Console.Write("Enter a number: ");
-        string firstNum = Console.ReadLine();
-        int firstNumInt = int.Parse(firstNum); //Using .toString() and .Parse() we can change variables
+        DisplayResult(name, squaredNum);
+    }
 
+    static void DisplayMessage()
+    {
+        Console.WriteLine("Welcome to the Program!");
+    }
 
+    static string PromptUserName() //Asks for and returns the user's name (as a string)
+    {
+        Console.Write("Please enter your name: ");
+        string name = Console.ReadLine();
+        return name;
+    }
 
-        Console.Write("Enter a second number: ");
-        string secondNum = Console.ReadLine();
-        int secondNumInt = int.Parse(secondNum);
+    static int PromtUserNumber() //Asks for and returns the user's favorite number (as an integer)
+    {
+        Console.Write("What is your favorite number? ");
+        string favNumber = Console.ReadLine();
+        int IntFavNumber = StringToInt(favNumber); //What do you think Maddie?
+        return IntFavNumber;
+    }
 
-        int test = AddNumbers(firstNumInt, secondNumInt, entry);
-        Console.Write(test); //Is this the right way to do this?
+    static int SquareNumber(int number) //Accepts an integer as a parameter and returns that number squared (as an integer)
+    {
+        int squaredNum = number * number;
+        return squaredNum;
+    }
+
+    static void DisplayResult(string name, int squaredNumber) //Accepts the user's name and the squared number and displays them.
+    {
+        Console.WriteLine(name + ", the square of your number is " + squaredNumber);
+    }
+
+    static int StringToInt(string str)
+    {
+        int changedEntry = int.Parse(str);
+        return changedEntry;
     }
 }
