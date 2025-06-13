@@ -2,7 +2,12 @@ using System;
 
 class Program
 {
-
+    public class Blind
+    {
+        public double _blindWidth;
+        public double _blindHeight;
+        public string _blindColor;
+    }
     static void Main(string[] args)
     {/*
         static int AddNumbers(int firstNum, int secondNum, string entry) //When do we need to put "static"?
@@ -31,14 +36,10 @@ class Program
         int test = AddNumbers(firstNumInt, secondNumInt, entry);
         Console.Write(test); //Is this the right way to do this?
     */
-    public class Blind
-    {
-        public double _blindWidth;
-        public double _blindHeight;
-        public string _blindColor;
-    }
-    Blind kitchen = new Blind();
-    kitchen._blindWidth = 10; //Why is this not assigning?
+
+        Blind kitchen = new Blind();
+        kitchen._blindWidth = 10; //Why is this not assigning?
+        Console.Write(kitchen._blindWidth);
 
     }
 }
