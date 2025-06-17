@@ -7,6 +7,11 @@ class Program
         public double _blindWidth;
         public double _blindHeight;
         public string _blindColor;
+
+        public double GetArea()
+        {
+            return _blindHeight * _blindHeight;
+        }
     }
     static void Main(string[] args)
     {/*
